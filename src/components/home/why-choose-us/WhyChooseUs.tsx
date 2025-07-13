@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import Card from '../../common/Card';
 import Button from '../../common/Button';
 
 const features = [ 

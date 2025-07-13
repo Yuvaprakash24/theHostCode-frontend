@@ -33,7 +33,7 @@ const Testimonials: React.FC = () => {
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied customers have to say.
+            Don&apos;t just take our word for it. Here&apos;s what our satisfied customers have to say.
           </p>
         </div>
         {/* First row: left to right */}
