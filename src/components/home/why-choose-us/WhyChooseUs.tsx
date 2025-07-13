@@ -100,7 +100,16 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right: infinite carousel ---------------------------------- */}
-          <div className="w-full lg:w-[70%] overflow-hidden h-[480px] pl-8 pr-8 flex items-center hide-scrollbar">
+          {/* Mobile: Only show focused image, centered */}
+          <div className="w-full flex justify-center items-center h-[380px] lg:hidden">
+            <img
+              src={features[focus].image}
+              alt={features[focus].title}
+              className="object-cover h-[320px] w-[260px] rounded-2xl shadow-2xl"
+            />
+          </div>
+          {/* Desktop: Infinite carousel */}
+          <div className="w-full lg:w-[70%] overflow-hidden h-[480px] pl-8 pr-8 items-center hide-scrollbar hidden lg:flex">
             <div
               className="flex items-center gap-6"
               style={{
