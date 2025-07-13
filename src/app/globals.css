@@ -24,3 +24,82 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes scroll-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-x {
+  animation: scroll-x 30s linear infinite !important;
+}
+
+@keyframes scroll-x-reverse {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+.animate-scroll-x-reverse {
+  animation: scroll-x 30s linear infinite reverse !important;
+}
+
+/* Hide horizontal scrollbar for all browsers */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Custom shadow for testimonial cards: bottom and right only */
+.testimonial-shadow {
+  box-shadow:
+    -16px 0 40px 0 rgba(0,0,0,0.22),   /* left, strong and dark */
+    0 20px 48px 0 rgba(0,0,0,0.28),     /* bottom, strong and dark */
+    0 2px 8px 0 rgba(0,0,0,0.12);       /* subtle all around */
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-delay-500 {
+  animation-delay: 0.5s !important;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.5s;
+}
+
+@keyframes slide-in-top {
+  0% { opacity: 0; transform: translateY(-60px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in-top {
+  animation: slide-in-top 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.5s;
+}
+
+@keyframes slide-in-left {
+  0% { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-left {
+  animation: slide-in-left 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.5s;
+}
+
+@keyframes slide-in-right {
+  0% { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.5s;
+}
