@@ -27,7 +27,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             What Our Clients Say

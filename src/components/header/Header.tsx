@@ -16,7 +16,7 @@ const Header: React.FC = () => {
         {/* Logo */}
         <div className="flex items-center min-w-[100px] sm:min-w-[140px]">
           <span className="font-extrabold text-lg tracking-tight font-mono">
-            <img src="/logo.jpg" alt="logo" className="w-50 h-20" />
+            <img src="/logo.jpg" alt="logo" className="w-16 h-8" />
           </span>
         </div>
         {/* Hamburger for mobile */}

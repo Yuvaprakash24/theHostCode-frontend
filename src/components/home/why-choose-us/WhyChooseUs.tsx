@@ -54,17 +54,31 @@ export default function WhyChooseUs() {
     };
   }, [enable]);
 
-  /* hard‑reset exactly after the slide completes ---------------------- */
+  /* infinite loop with reset ---------------------- */
   const handleTransitionEnd = () => {
+    // Reset to the middle copy when reaching the end
     if (idx >= features.length * 2) {
       snapping.current = true;
       setEnable(false);
-      setIdx(features.length);
-      // re‑enable next paint
-      requestAnimationFrame(() => {
-        setEnable(true);
-        snapping.current = false;
-      });
+      setTimeout(() => {
+        setIdx(features.length);
+        setTimeout(() => {
+          setEnable(true);
+          snapping.current = false;
+        }, 50);
+      }, 50);
+    }
+    // Also handle the case when we go backwards
+    if (idx <= 0) {
+      snapping.current = true;
+      setEnable(false);
+      setTimeout(() => {
+        setIdx(features.length);
+        setTimeout(() => {
+          setEnable(true);
+          snapping.current = false;
+        }, 50);
+      }, 50);
     }
   };
 
@@ -78,11 +92,11 @@ export default function WhyChooseUs() {
         >
           Why Choose Us?
         </h2>
-      <div className="container mx-auto px-4 pt-12">
+      <div className="container mx-auto pt-12 pl-4">
 
         {/* Title with Slide-Up Animation */}
-        <div key={focus} className="animate-slide-up">
-          <h2 className="text-5xl lg:text-7xl font-extrabold text-gray-900 mb-8">
+        <div key={focus} className="animate-slide-up pl-4">
+          <h2 className="text-5xl lg:text-7xl font-semibold text-gray-900 mb-8">
             {features[focus].title}
           </h2>
         </div>
