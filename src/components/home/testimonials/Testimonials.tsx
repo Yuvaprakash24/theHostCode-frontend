@@ -5,21 +5,21 @@ const Testimonials: React.FC = () => {
     {
       name: "Sai Srinivas",
       position: "Founder of theHostCode",
-      avatar: "/logo.jpg",
+      avatar: "/logo.png",
       content:
         "Quam ut gravida cras nulla duis magnis. Facilisis bibendum amet vulputate facilisi consectetur tempus in turpis. Gravida tortor quisque donec adipiscing.",
     },
     {
       name: "Srinu",
       position: "Founder of Cyqubit",
-      avatar: "/logo.jpg",
+      avatar: "/logo.png",
       content:
         "Quam ut gravida cras nulla duis magnis. Facilisis bibendum amet vulputate facilisi consectetur tempus in turpis. Gravida tortor quisque donec adipiscing.",
     },
     {
       name: "Laxmi Sai Srinivas",
       position: "Founder of Syncqubit",
-      avatar: "/logo.jpg",
+      avatar: "/logo.png",
       content:
         "Quam ut gravida cras nulla duis magnis. Facilisis bibendum amet vulputate facilisi consectetur tempus in turpis. Gravida tortor quisque donec adipiscing.",
     },

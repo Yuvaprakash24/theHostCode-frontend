@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           <div className="md:w-1/3 flex flex-row items-start space-x-6">
             {/* Logo */}
             <div className="shrink-0 flex items-start pt-1">
-              <img src="/logo.jpg" alt="theHostCode logo" className="w-32 h-8 object-contain" />
+              <img src="/logo-dark.png" alt="theHostCode logo" className="w-32 h-8 object-contain" />
             </div>
             {/* Info */}
             <div className="space-y-3">

@@ -11,12 +11,12 @@ const menuItems = [
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="w-full bg-white shadow-sm">
+    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center min-w-[100px] sm:min-w-[140px]">
           <span className="font-extrabold text-lg tracking-tight font-mono">
-            <img src="/logo.jpg" alt="logo" className="w-16 h-8" />
+            <img src="/logo.png" alt="logo" className="w-26 h-10" />
           </span>
         </div>
         {/* Hamburger for mobile */}
