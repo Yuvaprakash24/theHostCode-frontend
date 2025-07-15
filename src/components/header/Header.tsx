@@ -11,16 +11,16 @@ const menuItems = [
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="w-full bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+    <header className="w-full bg-gray-100 shadow-sm sticky top-0 z-50">
+      <div className="max-w-10xl px-4 py-2 items-center flex justify-between">
         {/* Logo */}
-        <div className="flex items-center min-w-[100px] sm:min-w-[140px]">
+        <div className="hidden lg:flex flex-1 justify-start">
           <span className="font-extrabold text-lg tracking-tight font-mono">
             <img src="/logo.png" alt="logo" className="w-26 h-10" />
           </span>
         </div>
         {/* Hamburger for mobile */}
-        <div className="flex lg:hidden">
+        <div className="flex lg:hidden justify-end-safe">
           <button
             className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
             onClick={() => setMobileMenuOpen((open) => !open)}
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
         {/* Contact Us Button */}
-        <div className="hidden lg:flex min-w-[90px] sm:min-w-[120px] justify-end">
+        <div className="hidden lg:flex flex-1 justify-end">
           <Button className="bg-gradient-to-r from-black to-gray-600 text-white rounded-2xl px-4 py-2 sm:px-8 sm:py-3 font-semibold shadow-none border-none text-xs sm:text-base">
             contact us
           </Button>
