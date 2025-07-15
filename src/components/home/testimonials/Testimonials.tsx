@@ -27,7 +27,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 ">
+      <div className="container mx-auto ">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             What Our Clients Say
@@ -37,7 +37,7 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
         {/* First row: left to right */}
-        <div className="w-full pb-12 pt-12 hide-scrollbar">
+        <div className="overflow-x-auto pb-12 pt-12 hide-scrollbar">
           <div className="flex animate-scroll-x gap-8 w-max">
             {/* First track */}
             {testimonials.map((testimonial, index) => (
@@ -86,7 +86,7 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
         {/* Second row: right to left (infinite) */}
-        <div className="w-full pb-12 pt-2 hide-scrollbar">
+        <div className="overflow-x-auto pb-12 pt-2 hide-scrollbar">
           <div className="flex animate-scroll-x-reverse gap-8 w-max">
             {testimonials.map((testimonial, index) => (
               <div
