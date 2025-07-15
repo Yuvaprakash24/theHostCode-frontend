@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
 
         {/* Title with Slide-Up Animation */}
         <div key={focus} className="animate-slide-up pl-4">
-          <h2 className="text-5xl lg:text-7xl font-semibold text-gray-900 mb-8">
+          <h2 className="text-5xl lg:text-7xl font-semibold text-gray-900 mb-8 ">
             {features[focus].title}
           </h2>
         </div>
@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
                 return (
                   <div
                     key={`${f.title}-${i}`}
-                    onMouseEnter={() => setIdx(i)}
+                    
                     className={`transition-transform duration-500 flex items-center justify-center 
                       ${isFocus ? 'scale-110 z-10 shadow-2xl' : 'scale-90 opacity-60'}
                       ${i < idx ? 'invisible pointer-events-none' : ''}`}
@@ -146,7 +146,7 @@ export default function WhyChooseUs() {
                       width: isFocus ? FOCUS_CARD_W : CARD_W,
                       minWidth: isFocus ? FOCUS_CARD_W : CARD_W,
                       height: isFocus ? FOCUS_CARD_H : CARD_H,
-                      cursor: 'pointer',
+                 
                     }}
                   >
                     <img
