@@ -14,7 +14,7 @@ const AboutUs: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2
           ref={headingRef}
-          className={`text-5xl font-semibold text-gray-900 mb-12 text-center sticky-heading ${
+          className={`home-page-heading mb-12 text-center sticky-heading ${
             headingInView ? 'animate-slide-in-top' : 'opacity-0'
           }`}
         >

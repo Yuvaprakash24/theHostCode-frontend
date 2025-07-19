@@ -76,14 +76,14 @@ export default function WhyChooseUs() {
 
   return (
     <section className="py-16 bg-gray-50">
-      <h2 className="text-5xl font-extrabold text-gray-900 mb-12 text-center sticky-heading">
+      <h2 className="home-page-heading mb-12 text-center sticky-heading">
         Why Choose Us?
       </h2>
       <div className="container mx-auto pt-12 pl-4">
 
         {/* Title with Slide-Up Animation */}
         <div key={currentFeatureIndex} className="animate-slide-in-bottom pl-4">
-          <h2 className="text-5xl lg:text-7xl font-semibold text-gray-900 mb-8">
+          <h2 className="feature-title text-gray-900 mb-8">
             {features[currentFeatureIndex].title}
           </h2>
         </div>
@@ -104,7 +104,8 @@ export default function WhyChooseUs() {
             <img
               src={features[currentFeatureIndex].image}
               alt={features[currentFeatureIndex].title}
-              className="object-cover h-[320px] w-[260px] rounded-2xl shadow-2xl"
+              className="object-cover h-[320px] w-[260px] rounded-2xl"
+              style={{ boxShadow: '10px 15px 20px 0px #00000040' }}
             />
           </div>
           
@@ -157,9 +158,10 @@ export default function WhyChooseUs() {
                       alt={feature.title}
                       className={`object-cover rounded-2xl will-change-transform
                         ${isFocused 
-                          ? 'h-[380px] w-[340px] shadow-2xl' 
-                          : 'h-[320px] w-[260px] shadow-lg'}
+                          ? 'h-[380px] w-[340px]' 
+                          : 'h-[320px] w-[260px]'}
                       `}
+                      style={{ boxShadow: '10px 15px 20px 0px #00000040' }}
                     />
                   </div>
                 );

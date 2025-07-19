@@ -50,12 +50,6 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
-/* Custom shadow for testimonial cards: bottom and right only */
-.testimonial-shadow {
-  box-shadow:
-    0 8px 32px 0 rgba(0,0,0,0.32),
-    0 1.5px 6px 0 rgba(0,0,0,0.20);
-}
 
 @keyframes slide-up {
   0% {
@@ -110,4 +104,22 @@ body {
 .animate-slide-in-bottom {
   animation: slide-in-bottom 1s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 0.5s;
+}
+
+.home-page-heading {
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 48px;
+  line-height: 50px;
+  letter-spacing: 0;
+}
+
+.feature-title {
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0;
 }

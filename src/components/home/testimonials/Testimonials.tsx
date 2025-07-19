@@ -28,8 +28,8 @@ const Testimonials: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50 w-full">
       <div className="w-full px-0">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-6">
+          <h2 className="home-page-heading mb-4">
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -37,13 +37,13 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
         {/* First row: left to right */}
-        <div className="overflow-x-auto pb-2 pt-12 hide-scrollbar w-full">
+        <div className="overflow-x-auto pb-6 pt-6 hide-scrollbar w-full">
           <div className="flex animate-scroll-x gap-8 w-full px-4">
             {/* First track */}
             {testimonials.map((testimonial, index) => (
               <div
                 key={`first-${index}`}
-                className="bg-white rounded-2xl testimonial-shadow p-6 flex flex-col gap-4 min-w-[400px] max-w-[500px] my-6"
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`second-${index}`}
-                className="bg-white rounded-2xl testimonial-shadow p-6 flex flex-col gap-4 min-w-[400px] max-w-[500px] my-6"
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -91,7 +91,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`first-reverse-${index}`}
-                className="bg-white rounded-2xl testimonial-shadow p-6 flex flex-col gap-4 min-w-[400px] max-w-[500px] my-6"
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -112,7 +112,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`second-reverse-${index}`}
-                className="bg-white rounded-2xl testimonial-shadow p-6 flex flex-col gap-4 min-w-[400px] max-w-[500px] my-6"
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
