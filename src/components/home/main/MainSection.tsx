@@ -3,13 +3,13 @@ import React from 'react';
 const MainSection: React.FC = () => {
   return (
     <section
-      className="relative min-h-[90vh] flex items-center justify-center bg-[#f6f9fa] max-w-full"
+      className="relative min-h-screen flex items-center justify-center bg-[#f6f9fa] max-w-full"
       style={{
         backgroundImage: "url('/hero-section-background.png')",
-        backgroundSize: 'cover',
+        backgroundSize: 'cover', // changed from cover to contain
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-       
+        backgroundColor: '#f6f9fa',
       }}
     >
       <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet"></link>
@@ -25,8 +25,7 @@ const MainSection: React.FC = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
         </p>  
       </div>
-      {/* Optional: overlay for better text contrast */}
-      <div className="absolute inset-0 bg-white/60 pointer-events-none" />
+      {/* Removed overlay for better image visibility */}
     </section>
   );
 };

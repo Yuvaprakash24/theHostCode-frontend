@@ -2,10 +2,10 @@
 import React, { useState } from 'react';
 import { Button } from '../common';
 const menuItems = [
-  { label: 'About us' },
-  { label: 'Services' },
-  { label: 'Career' },
-  { label: 'Blogs' },
+  { label: 'About us', dropdown: false },
+  { label: 'Services', dropdown: false },
+  { label: 'Career', dropdown: true },
+  { label: 'Blogs', dropdown: true },
 ];
 
 const Header: React.FC = () => {
@@ -41,15 +41,17 @@ const Header: React.FC = () => {
                   className={`text-sm px-2 py-1 hover:text-black hover:font-bold transition-all flex items-center font-normal`}
                 >
                   {item.label}
-                  <svg
-                    className="w-3 h-3 ml-1 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  {item.dropdown && (
+                    <svg
+                      className="w-3 h-3 ml-1 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
                 </a>
               </li>
             ))}
@@ -74,15 +76,17 @@ const Header: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.label}
-                  <svg
-                    className="w-3 h-3 ml-1 mt-0.5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
+                  {item.dropdown && (
+                    <svg
+                      className="w-3 h-3 ml-1 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
                 </a>
               </li>
             ))}

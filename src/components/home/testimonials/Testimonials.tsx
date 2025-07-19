@@ -26,8 +26,8 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto ">
+    <section className="py-16 bg-gray-50 w-full">
+      <div className="w-full px-0">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             What Our Clients Say
@@ -37,8 +37,8 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
         {/* First row: left to right */}
-        <div className="overflow-x-auto pb-2 pt-12 hide-scrollbar">
-          <div className="flex animate-scroll-x gap-8 w-max">
+        <div className="overflow-x-auto pb-2 pt-12 hide-scrollbar w-full">
+          <div className="flex animate-scroll-x gap-8 w-full px-4">
             {/* First track */}
             {testimonials.map((testimonial, index) => (
               <div
@@ -86,8 +86,8 @@ const Testimonials: React.FC = () => {
           </div>
         </div>
         {/* Second row: right to left (infinite) */}
-        <div className="overflow-x-auto pb-12 pt-2 hide-scrollbar">
-          <div className="flex animate-scroll-x-reverse gap-8 w-max">
+        <div className="overflow-x-auto pb-12 pt-2 hide-scrollbar w-full">
+          <div className="flex animate-scroll-x-reverse gap-8 w-full px-4">
             {testimonials.map((testimonial, index) => (
               <div
                 key={`first-reverse-${index}`}
