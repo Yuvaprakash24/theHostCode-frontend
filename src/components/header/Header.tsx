@@ -195,7 +195,7 @@ const Header = () => {
       {menuItems.map((item) => (
         <div
           key={`dropdown-${item.label}`}
-          className={`fixed left-0 right-0 bg-white shadow-2xl transition-all duration-300 ease-out transform z-40 ${
+          className={`hidden lg:block fixed left-0 right-0 bg-white shadow-2xl transition-all duration-300 ease-out transform z-40 ${
             openDropdown === item.label && !isAnimating
               ? 'opacity-100 translate-y-0 visible'
               : 'opacity-0 -translate-y-4 invisible'
@@ -263,7 +263,7 @@ const Header = () => {
 
       {/* Mobile menu dropdown */}
       <div 
-        className={`lg:hidden bg-white shadow-md transition-all duration-300 ease-out transform origin-top ${
+        className={`lg:hidden w-full bg-white shadow-md transition-all duration-300 ease-out transform origin-top ${
           mobileMenuOpen 
             ? 'opacity-100 scale-y-100 max-h-screen' 
             : 'opacity-0 scale-y-0 max-h-0'
@@ -310,13 +310,13 @@ const Header = () => {
                 
                 {/* Mobile Mega Dropdown */}
                 <div 
-                  className={`w-full bg-gray-50 rounded-xl mt-2 flex flex-col md:flex-row px-4 py-6 transition-all duration-300 ease-out transform origin-top ${
+                  className={`w-full bg-gray-50 rounded-xl mt-2 flex flex-col px-2 py-4 transition-all duration-300 ease-out transform origin-top ${
                     item.dropdown && openDropdown === item.label
                       ? 'opacity-100 scale-y-100 max-h-screen'
                       : 'opacity-0 scale-y-0 max-h-0 py-0'
                   } overflow-hidden`}
                 >
-                  <div className="flex-1 flex flex-col justify-center pr-0 md:pr-8 mb-4 md:mb-0">
+                  <div className="flex-1 flex flex-col justify-center pr-0 mb-4">
                     <span className="text-xs text-gray-500 mb-4">{item.exploreText}</span>
                     <ul className="space-y-4">
                       {item.dropdownContent?.map((link, linkIndex) => (
@@ -338,14 +338,7 @@ const Header = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="flex-1 flex flex-col items-center justify-center">
-                    <img 
-                      src={item.image} 
-                      alt={item.label} 
-                      className="rounded-xl w-64 h-40 object-cover mb-4 transition-transform duration-300 hover:scale-105" 
-                    />
-                    <span className="text-sm text-gray-600 text-center">{item.imageDesc}</span>
-                  </div>
+                  {/* Removed image and description for mobile dropdown */}
                 </div>
               </li>
             ))}
@@ -354,7 +347,7 @@ const Header = () => {
           {/* Contact Us Button in Mobile Menu */}
           <div className="mt-4 pt-4 border-t border-gray-200 flex justify-center">
             <Button 
-              className={`w-50 text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base transition-all duration-500 transform ${
+              className={`w-full bg-main-color text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base transition-all duration-500 transform ${
                 mobileMenuOpen 
                   ? 'opacity-100 translate-y-0 scale-100' 
                   : 'opacity-0 translate-y-4 scale-95'
