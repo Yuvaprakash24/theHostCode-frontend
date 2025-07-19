@@ -120,7 +120,6 @@ export default function WhyChooseUs() {
             >
               {infiniteFeatures.map((feature, i) => {
                 const isFocused = i === currentSlide;
-                const isToTheRight = i > currentSlide;
                 const distanceFromFocus = i - currentSlide;
                 
                 // Only show focused card and cards to the right (within 3 positions)
