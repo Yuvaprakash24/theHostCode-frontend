@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
   const translateX = -(currentSlide * STEP) + (FOCUS_CARD_W - CARD_W) / 2 + 32;
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-main-color">
       <h2 className="home-page-heading mb-12 text-center sticky-heading">
         Why Choose Us?
       </h2>

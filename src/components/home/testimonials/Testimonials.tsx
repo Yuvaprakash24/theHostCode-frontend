@@ -26,7 +26,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 w-full">
+    <section className="py-16 bg-main-color w-full">
       <div className="w-full px-0">
         <div className="text-center mb-6">
           <h2 className="home-page-heading mb-4">
