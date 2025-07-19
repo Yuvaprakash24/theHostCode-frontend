@@ -9,7 +9,7 @@ const features = [
     image: "/why-choose-us/ai.png"
   },
   {
-    title: "Data Science",
+    title: "Data Science", 
     description: "Data Science is the field of analyzing and interpreting large volumes of data. It combines statistics, machine learning, and programming to find patterns. Data scientists turn raw data into actionable insights for businesses. It plays a key role in decision-making and strategic planning.",
     image: "/why-choose-us/data-science.png"
   },
@@ -28,138 +28,145 @@ const features = [
     description: "Digital Marketing integrates software development and IT operations for faster delivery. It emphasizes collaboration, automation, and continuous integration/deployment. Tools like Jenkins, Docker, and Kubernetes are commonly used in DevOps. Its goal is to shorten development cycles and improve product quality.",
     image: "/why-choose-us/marketing.png"
   }
- ];
+];
 
-const CARD_W = 260;        // px
-const CARD_H = 320;        // px
-const FOCUS_CARD_W = 340;  // px
-const FOCUS_CARD_H = 380;  // px
-const GAP     = 24;        // px
-const STEP    = CARD_W + GAP;
+const CARD_W = 260;
+const CARD_H = 320;
+const FOCUS_CARD_W = 340;
+const FOCUS_CARD_H = 380;
+const GAP = 24;
+const STEP = CARD_W + GAP;
 
 export default function WhyChooseUs() {
-  const clone = [...features, ...features, ...features];   // 3×
-  const [idx, setIdx] = useState(features.length);         // start in the middle copy
-  const [enable, setEnable] = useState(true);              // CSS transition toggle
-  const intervalRef = useRef<NodeJS.Timeout | null>(null); // store interval id
-  const snapping = useRef(false);                          // track if snapping
-
-  /* autoplay ---------------------------------------------------------- */
+  // We'll use a continuous counter that never resets
+  const [slideIndex, setSlideIndex] = useState(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Auto advance every 3 seconds
   useEffect(() => {
-    if (!enable || snapping.current) return;
     if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => setIdx(i => i + 1), 3000);
+    intervalRef.current = setInterval(() => {
+      setSlideIndex(prev => prev + 1);
+    }, 3000);
+    
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [enable]);
+  }, []);
 
-  /* infinite loop with reset ---------------------- */
-  const handleTransitionEnd = () => {
-    // Reset to the middle copy when reaching the end
-    if (idx >= features.length * 2) {
-      snapping.current = true;
-      setEnable(false);
-      setTimeout(() => {
-        setIdx(features.length);
-        setTimeout(() => {
-          setEnable(true);
-          snapping.current = false;
-        }, 50);
-      }, 50);
-    }
-    // Also handle the case when we go backwards
-    if (idx <= 0) {
-      snapping.current = true;
-      setEnable(false);
-      setTimeout(() => {
-        setIdx(features.length);
-        setTimeout(() => {
-          setEnable(true);
-          snapping.current = false;
-        }, 50);
-      }, 50);
-    }
+  // Create infinite array by repeating features
+  const createInfiniteArray = () => {
+    const totalSlides = 1000; // Much larger number for truly infinite scrolling
+    return Array.from({ length: totalSlides }, (_, i) => ({
+      ...features[i % features.length],
+      uniqueId: i,
+      originalIndex: i % features.length
+    }));
   };
 
-  const x = -(idx * STEP) + (FOCUS_CARD_W - CARD_W) / 2 + 32; // center focus card, add left padding
-  const focus = idx % features.length;          // which original card is in focus
+  const infiniteFeatures = createInfiniteArray();
+  
+  // Calculate current focused feature (for the text/description)
+  const currentFeatureIndex = slideIndex % features.length;
+  
+  // Calculate translate position - start from a safe middle position
+  const startOffset = 100; // Start from slide 100 to have plenty of room
+  const currentSlide = startOffset + slideIndex;
+  const translateX = -(currentSlide * STEP) + (FOCUS_CARD_W - CARD_W) / 2 + 32;
 
   return (
     <section className="py-16 bg-gray-50">
-      <h2
-          className="text-5xl font-extrabold text-gray-900 mb-12 text-center sticky-heading"
-        >
-          Why Choose Us?
-        </h2>
+      <h2 className="text-5xl font-extrabold text-gray-900 mb-12 text-center sticky-heading">
+        Why Choose Us?
+      </h2>
       <div className="container mx-auto pt-12 pl-4">
 
         {/* Title with Slide-Up Animation */}
-        <div key={focus} className="animate-slide-up pl-4">
-          <h2 className="text-5xl lg:text-7xl font-semibold text-gray-900 mb-8 ">
-            {features[focus].title}
+        <div key={currentFeatureIndex} className="animate-slide-up pl-4">
+          <h2 className="text-5xl lg:text-7xl font-semibold text-gray-900 mb-8">
+            {features[currentFeatureIndex].title}
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-center">
-
-          {/* Left: description ---------------------------------------- */}
+        <div className="flex flex-col lg:flex-row items-center">
+          {/* Left: description */}
           <div className="w-full lg:w-[30%] min-w-[320px]">
             <p className="text-lg lg:text-xl text-gray-700 mb-10 pl-4 lg:pl-6 whitespace-pre-line">
-              {features[focus].description}
+              {features[currentFeatureIndex].description}
             </p>
             <Button className="ml-4 lg:ml-6 mt-2 px-6 py-2 font-semibold">
               Explore now
             </Button>
           </div>
 
-          {/* Right: infinite carousel ---------------------------------- */}
-          {/* Mobile: Only show focused image, centered */}
+          {/* Mobile: Only show focused image */}
           <div className="w-full flex justify-center items-center h-[380px] lg:hidden">
             <img
-              src={features[focus].image}
-              alt={features[focus].title}
+              src={features[currentFeatureIndex].image}
+              alt={features[currentFeatureIndex].title}
               className="object-cover h-[320px] w-[260px] rounded-2xl shadow-2xl"
             />
           </div>
+          
           {/* Desktop: Infinite carousel */}
-          <div className="w-full lg:w-[70%] overflow-hidden h-[480px] pl-8 pr-8 items-center hide-scrollbar hidden lg:flex">
+          <div className="w-full lg:w-[70%] overflow-hidden h-[480px] pl-4 pr-8 items-center hide-scrollbar hidden lg:flex">
             <div
-              className="flex items-center gap-6"
+              className="flex items-center gap-6 will-change-transform"
               style={{
-                transform: `translateX(${x}px)`,
-                transition: enable ? 'transform 0.5s ease' : 'none',
-                width: clone.length * STEP,
+                transform: `translateX(${translateX}px)`,
+                transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                width: infiniteFeatures.length * STEP,
               }}
-              onTransitionEnd={handleTransitionEnd}
             >
-              {clone.map((f, i) => {
-                const isFocus = i === idx;
+              {infiniteFeatures.map((feature, i) => {
+                const isFocused = i === currentSlide;
+                const isToTheRight = i > currentSlide;
+                const distanceFromFocus = i - currentSlide;
+                
+                // Only show focused card and cards to the right (within 3 positions)
+                if (distanceFromFocus < 0 || distanceFromFocus > 3) {
+                  return (
+                    <div
+                      key={feature.uniqueId}
+                      style={{
+                        width: CARD_W,
+                        minWidth: CARD_W,
+                        height: CARD_H,
+                        opacity: 0,
+                        pointerEvents: 'none',
+                      }}
+                    />
+                  );
+                }
+                
                 return (
                   <div
-                    key={`${f.title}-${i}`}
-                    
-                    className={`transition-transform duration-500 flex items-center justify-center 
-                      ${isFocus ? 'scale-110 z-10 shadow-2xl' : 'scale-90 opacity-60'}
-                      ${i < idx ? 'invisible pointer-events-none' : ''}`}
+                    key={feature.uniqueId}
+                    className={`flex items-center justify-center will-change-transform
+                      ${isFocused 
+                        ? 'scale-110 z-10 transition-all duration-500' 
+                        : 'scale-90 opacity-60 transition-all duration-500'}
+                    `}
                     style={{
-                      width: isFocus ? FOCUS_CARD_W : CARD_W,
-                      minWidth: isFocus ? FOCUS_CARD_W : CARD_W,
-                      height: isFocus ? FOCUS_CARD_H : CARD_H,
-                 
+                      width: isFocused ? FOCUS_CARD_W : CARD_W,
+                      minWidth: isFocused ? FOCUS_CARD_W : CARD_W,
+                      height: isFocused ? FOCUS_CARD_H : CARD_H,
                     }}
                   >
                     <img
-                      src={f.image}
-                      alt={f.title}
-                      className={`object-cover ${isFocus ? 'h-[380px] w-[340px]' : 'h-[320px] w-[260px]'} rounded-2xl ${isFocus ? 'shadow-2xl' : 'shadow-lg'}`}
+                      src={feature.image}
+                      alt={feature.title}
+                      className={`object-cover rounded-2xl will-change-transform
+                        ${isFocused 
+                          ? 'h-[380px] w-[340px] shadow-2xl' 
+                          : 'h-[320px] w-[260px] shadow-lg'}
+                      `}
                     />
                   </div>
                 );
               })}
             </div>
           </div>
-
         </div>
       </div>
     </section>

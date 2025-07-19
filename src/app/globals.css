@@ -53,9 +53,8 @@ body {
 /* Custom shadow for testimonial cards: bottom and right only */
 .testimonial-shadow {
   box-shadow:
-    -16px 0 40px 0 rgba(0,0,0,0.22),   /* left, strong and dark */
-    0 20px 48px 0 rgba(0,0,0,0.28),     /* bottom, strong and dark */
-    0 2px 8px 0 rgba(0,0,0,0.12);       /* subtle all around */
+    0 8px 32px 0 rgba(0,0,0,0.32),
+    0 1.5px 6px 0 rgba(0,0,0,0.20);
 }
 
 @keyframes slide-up {

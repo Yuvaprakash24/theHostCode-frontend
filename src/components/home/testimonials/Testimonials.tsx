@@ -37,7 +37,7 @@ const Testimonials: React.FC = () => {
           </p>
         </div>
         {/* First row: left to right */}
-        <div className="overflow-x-auto pb-12 pt-12 hide-scrollbar">
+        <div className="overflow-x-auto pb-2 pt-12 hide-scrollbar">
           <div className="flex animate-scroll-x gap-8 w-max">
             {/* First track */}
             {testimonials.map((testimonial, index) => (
