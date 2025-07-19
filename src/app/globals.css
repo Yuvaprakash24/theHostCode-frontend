@@ -123,3 +123,23 @@ body {
   line-height: 100%;
   letter-spacing: 0;
 }
+
+.main-page-sub-heading {
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.main-page-heading {
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 65px;
+  line-height: 56.67px;
+  letter-spacing: 0%;
+  text-align: center;
+}

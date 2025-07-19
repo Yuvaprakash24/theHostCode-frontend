@@ -15,14 +15,14 @@ const MainSection: React.FC = () => {
     >
       <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet"></link>
       <div className="container mx-auto px-4 flex flex-col items-center text-center z-10 relative">
-        <h1 className="text-6xl md:text-7xl font-semibold text-black mb-6 leading-tight animate-slide-up" style={{ animationDelay: '0.5s', animationDuration: '1s', animationTimingFunction: 'ease-in-out' }}>
+        <h1 className="main-page-heading mb-6 leading-tight animate-slide-up" style={{ animationDelay: '0.5s', animationDuration: '1s', animationTimingFunction: 'ease-in-out' }}>
           Take your Business Digital<span style={{ fontFamily: "'Baloo 2', cursive" }}>,</span><br />
           <span className="block mt-2 flex items-center justify-center gap-2">
             the easy way
             <span className="animate-bounce font-extrabold -mb-5" style={{ fontFamily: "'Baloo 2', cursive" }}>!</span>
           </span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-8">
+        <p className="main-page-sub-heading text-gray-500 max-w-2xl mx-auto mb-8">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
         </p>  
       </div>

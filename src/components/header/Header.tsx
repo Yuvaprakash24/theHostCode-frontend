@@ -4,8 +4,8 @@ import { Button } from '../common';
 const menuItems = [
   { label: 'About us', dropdown: false },
   { label: 'Services', dropdown: false },
-  { label: 'Career', dropdown: true },
-  { label: 'Blogs', dropdown: true },
+  { label: 'Career', dropdown: false },
+  { label: 'Blogs', dropdown: false },
 ];
 
 const Header: React.FC = () => {
