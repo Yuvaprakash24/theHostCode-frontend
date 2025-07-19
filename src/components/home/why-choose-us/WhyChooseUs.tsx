@@ -90,8 +90,8 @@ export default function WhyChooseUs() {
 
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left: description */}
-          <div className="w-full lg:w-[30%] min-w-[320px]">
-            <p className="text-lg lg:text-xl text-gray-700 mb-10 pl-4 lg:pl-6 whitespace-pre-line">
+          <div className="w-full lg:w-[40%] min-w-[320px]">
+            <p className="text-lg lg:text-xl text-gray-700 mb-10 pl-4 lg:pl-6 whitespace-pre-line my-font">
               &emsp;{features[currentFeatureIndex].description}
             </p>
             <Button className="ml-4 lg:ml-6 mt-2 px-6 py-2 font-semibold">
@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
           </div>
           
           {/* Desktop: Infinite carousel */}
-          <div className="w-full lg:w-[70%] overflow-hidden h-[480px] pl-4 pb-10 pr-8 items-center hide-scrollbar hidden lg:flex">
+          <div className="w-full lg:w-[60%] overflow-hidden h-[480px] pl-4 pb-10 pr-8 items-center hide-scrollbar hidden lg:flex">
             <div
               className="flex items-center gap-6 will-change-transform"
               style={{

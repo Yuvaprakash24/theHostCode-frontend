@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
             headingInView ? 'animate-slide-in-top' : 'opacity-0'
           }`}
         >
-          About theHostCode.
+          About Syncqubits.
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center h-full">
           {/* Left: Image Card */}
@@ -41,8 +41,8 @@ const AboutUs: React.FC = () => {
             ref={rightRef}
             className={`text-left px-10 ${rightInView ? 'animate-slide-in-right' : 'opacity-0'}`}
           >
-            <p className="text-2xl text-gray-800 mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi delectus quasi molestiae optio quo explicabo non ullam, enim distinctio qui ipsa illum magni provident. Minus, doloremque earum deleniti voluptates dolorum eum nam at eius tenetur fugiat velit voluptatum alias possimus quis ullam, debitis quibusdam voluptatem dolores porro, accusamus distinctio quod!
+            <p className="text-gray-800 mb-8 leading-relaxed my-font pr-24">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi delectus quasi molestiae optio quo explicabo non ullam, enim distinctio qui ipsa illum magni provident. Minus, doloremque earum deleniti voluptates dolorum eum nam at eius tenetur fugiat velit voluptatum alias possimus quis ullam Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, harum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, laudantium.
             </p>
             <Button>
               <span className="flex items-center gap-2">

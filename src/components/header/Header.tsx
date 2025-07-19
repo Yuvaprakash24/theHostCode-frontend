@@ -11,7 +11,7 @@ const menuItems = [
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <header className="w-full bg-gray-100 shadow-sm sticky top-0 z-50">
+    <header className="w-full bg-main-color">
       <div className="max-w-10xl px-4 py-2 items-center flex justify-between">
         {/* Logo */}
         <div className="hidden lg:flex flex-1 justify-start">
@@ -32,13 +32,13 @@ const Header: React.FC = () => {
           </button>
         </div>
         {/* Menu */}
-        <nav className="hidden lg:flex flex-1 justify-center">
-          <ul className="flex space-x-8">
+        <nav className="hidden lg:flex flex-1 justify-between">
+          <ul className="flex space-x-24">
             {menuItems.map((item) => (
               <li key={item.label} className="flex items-center">
                 <a
                   href="#"
-                  className={`text-sm px-2 py-1 hover:text-black hover:font-bold transition-all flex items-center font-normal`}
+                  className={`text-sm px-2 py-1 hover:text-black whitespace-nowrap`}
                 >
                   {item.label}
                   {item.dropdown && (
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
         </nav>
         {/* Contact Us Button */}
         <div className="hidden lg:flex flex-1 justify-end">
-          <Button className="bg-gradient-to-r from-black to-gray-600 text-white rounded-2xl px-4 py-2 sm:px-8 sm:py-3 font-semibold shadow-none border-none text-xs sm:text-base">
+          <Button className="bg-gradient-to-r from-black to-gray-600 text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base">
             contact us
           </Button>
         </div>

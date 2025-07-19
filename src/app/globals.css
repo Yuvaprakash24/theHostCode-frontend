@@ -108,7 +108,7 @@ body {
 
 .home-page-heading {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   font-style: normal;
   font-size: 48px;
   line-height: 50px;
@@ -119,14 +119,14 @@ body {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 64px;
+  font-size: 54px;
   line-height: 100%;
   letter-spacing: 0;
 }
 
 .main-page-sub-heading {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-weight: 250;
   font-style: normal;
   font-size: 20px;
   line-height: 32px;
@@ -136,10 +136,21 @@ body {
 
 .main-page-heading {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  font-weight: 950;
   font-style: bold;
-  font-size: 65px;
+  font-size: 55px;
   line-height: 56.67px;
   letter-spacing: 0%;
   text-align: center;
+}
+
+.main-color{
+  color: #f6f9fa;
+}
+
+.my-font{
+  font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
