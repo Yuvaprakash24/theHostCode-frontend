@@ -12,7 +12,7 @@ const menuItems = [
       { label: 'Timeline', href: '#' },
       { label: 'Team Member', href: '#' },
     ],
-    image: '/drop-down/about-us.png',
+    image: '/drop-down/about-us-dropdown.png',
     imageDesc: 'Learn more about the Syncqubits',
     exploreText: 'Explore about us'
   },
@@ -25,7 +25,7 @@ const menuItems = [
       { label: 'Cloud Solutions', href: '#' },
       { label: 'Consulting', href: '#' },
     ],
-    image: '/drop-down/about-us.png',
+    image: '/drop-down/about-us-dropdown.png',
     imageDesc: 'Discover our comprehensive services',
     exploreText: 'Explore our services'
   },
@@ -38,7 +38,7 @@ const menuItems = [
       { label: 'Benefits', href: '#' },
       { label: 'Apply Now', href: '#' },
     ],
-    image: '/drop-down/about-us.png',
+    image: '/drop-down/about-us-dropdown.png',
     imageDesc: 'Join our amazing team',
     exploreText: 'Explore careers'
   },
@@ -51,7 +51,7 @@ const menuItems = [
       { label: 'Case Studies', href: '#' },
       { label: 'Industry News', href: '#' },
     ],
-    image: '/drop-down/about-us.png',
+    image: '/drop-down/about-us-dropdown.png',
     imageDesc: 'Read our latest insights and updates',
     exploreText: 'Explore our blogs'
   },
