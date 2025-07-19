@@ -123,8 +123,8 @@ export default function WhyChooseUs() {
                 const isFocused = i === currentSlide;
                 const distanceFromFocus = i - currentSlide;
                 
-                // Only show focused card and cards to the right (within 3 positions)
-                if (distanceFromFocus < 0 || distanceFromFocus > 3) {
+                // Show cards from -1 (left of focus) to +3 (right of focus)
+                if (distanceFromFocus < -1 || distanceFromFocus > 3) {
                   return (
                     <div
                       key={feature.uniqueId}
@@ -134,10 +134,14 @@ export default function WhyChooseUs() {
                         height: CARD_H,
                         opacity: 0,
                         pointerEvents: 'none',
+                        visibility: 'hidden', // Completely hide from view
                       }}
                     />
                   );
                 }
+                
+                // Card that's moving out to the left - completely hide it
+                const isMovingLeft = distanceFromFocus === -1;
                 
                 return (
                   <div
@@ -145,12 +149,16 @@ export default function WhyChooseUs() {
                     className={`flex items-center justify-center will-change-transform
                       ${isFocused 
                         ? 'scale-110 z-10 transition-all duration-500' 
-                        : 'scale-90 opacity-60 transition-all duration-500'}
+                        : isMovingLeft
+                          ? 'scale-90 transition-all duration-500'
+                          : 'scale-90 opacity-60 transition-all duration-500'}
                     `}
                     style={{
                       width: isFocused ? FOCUS_CARD_W : CARD_W,
                       minWidth: isFocused ? FOCUS_CARD_W : CARD_W,
                       height: isFocused ? FOCUS_CARD_H : CARD_H,
+                      opacity: isMovingLeft ? 0 : undefined,
+                      visibility: isMovingLeft ? 'hidden' : 'visible', // Completely hide moving left cards
                     }}
                   >
                     <img

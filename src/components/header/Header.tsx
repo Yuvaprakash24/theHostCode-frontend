@@ -59,7 +59,7 @@ const Header: React.FC = () => {
         </nav>
         {/* Contact Us Button */}
         <div className="hidden lg:flex flex-1 justify-end">
-          <Button className="bg-gradient-to-r from-black to-gray-600 text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base">
+          <Button className="text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base">
             contact us
           </Button>
         </div>
@@ -93,7 +93,7 @@ const Header: React.FC = () => {
           </ul>
           {/* Contact Us Button in Mobile Menu */}
           <div className="mt-4 pt-4 border-t border-gray-200 flex justify-center">
-            <Button className="w-50 bg-gradient-to-r from-black to-gray-600 text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base">
+            <Button className="w-50 text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base">
               contact us
             </Button>
           </div>
