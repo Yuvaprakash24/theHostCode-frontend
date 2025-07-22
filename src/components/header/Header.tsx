@@ -46,7 +46,7 @@ const menuItems = [
     label: 'Blogs', 
     dropdown: true,
     dropdownContent: [
-      { label: 'Latest Posts', href: '/blog/LatestPosts' },
+      { label: 'Latest Posts', href: '/blog' },
       { label: 'Tech Insights', href: '#' },
       { label: 'Case Studies', href: '#' },
       { label: 'Industry News', href: '#' },
@@ -62,6 +62,7 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Handle dropdown state changes with animation timing
   const handleDropdownToggle = (itemLabel: string) => {
@@ -92,11 +93,65 @@ const Header = () => {
     }
   };
 
-  // Cleanup timeout on unmount
+  // Handle hover events for desktop
+  const handleMouseEnter = (itemLabel: string) => {
+    if (window.innerWidth >= 1024) { // Only for desktop
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      
+      // Open dropdown after a short delay
+      hoverTimeoutRef.current = setTimeout(() => {
+        if (openDropdown !== itemLabel) {
+          setOpenDropdown(itemLabel);
+        }
+      }, 150);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 1024) { // Only for desktop
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+      
+      // Close dropdown after a delay
+      hoverTimeoutRef.current = setTimeout(() => {
+        setIsAnimating(true);
+        timeoutRef.current = setTimeout(() => {
+          setOpenDropdown(null);
+          setIsAnimating(false);
+        }, 300);
+      }, 300);
+    }
+  };
+
+  const handleDropdownMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsAnimating(false);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    setIsAnimating(true);
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
+      }
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
       }
     };
   }, []);
@@ -105,7 +160,7 @@ const Header = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
-      if (!target.closest('header')) {
+      if (!target.closest('header') && !target.closest('.dropdown-container')) {
         if (openDropdown) {
           setIsAnimating(true);
           timeoutRef.current = setTimeout(() => {
@@ -145,12 +200,13 @@ const Header = () => {
           </div>
           
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex flex-1 justify-between">
+          <nav className="hidden lg:flex flex-1 justify-between" onMouseLeave={handleMouseLeave}>
             <ul className="flex space-x-24">
               {menuItems.map((item) => (
                 <li
                   key={item.label}
                   className="flex items-center relative"
+                  onMouseEnter={() => handleMouseEnter(item.label)}
                 >
                   <a
                     href="#"
@@ -184,7 +240,7 @@ const Header = () => {
           
           {/* Contact Us Button */}
           <div className="hidden lg:flex flex-1 justify-end">
-            <Button className="text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base">
+            <Button className="text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base my-font">
               contact us
             </Button>
           </div>
@@ -195,7 +251,7 @@ const Header = () => {
       {menuItems.map((item) => (
         <div
           key={`dropdown-${item.label}`}
-          className={`hidden lg:block fixed left-0 right-0 bg-white shadow-2xl transition-all duration-300 ease-out transform z-40 ${
+          className={`dropdown-container hidden lg:block fixed left-0 right-0 bg-white shadow-2xl transition-all duration-300 ease-out transform z-40 ${
             openDropdown === item.label && !isAnimating
               ? 'opacity-100 translate-y-0 visible'
               : 'opacity-0 -translate-y-4 invisible'
@@ -204,6 +260,8 @@ const Header = () => {
             top: '50px',
             minHeight: 300,
           }}
+          onMouseEnter={handleDropdownMouseEnter}
+          onMouseLeave={handleDropdownMouseLeave}
         >
           <div className="flex px-24 py-8 h-full">
             {/* Left: Links */}
@@ -338,7 +396,6 @@ const Header = () => {
                       ))}
                     </ul>
                   </div>
-                  {/* Removed image and description for mobile dropdown */}
                 </div>
               </li>
             ))}
