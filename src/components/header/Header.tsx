@@ -178,16 +178,16 @@ const Header = () => {
   return (
     <>
       <header className="w-full bg-main-color relative z-50">
-        <div className="max-w-10xl px-4 py-2 items-center flex justify-between">
+      <div className="max-w-10xl px-4 py-2 items-center flex justify-between">
           {/* Logo */}
-          <div className="hidden lg:flex flex-1 justify-start">
+          <div className="flex flex-1 justify-start">
             <span className="font-extrabold text-lg tracking-tight font-mono">
               <img src="/logo.png" alt="logo" className="w-26 h-10" />
             </span>
           </div>
           
           {/* Hamburger for mobile */}
-          <div className="flex lg:hidden justify-end-safe">
+          <div className="flex lg:hidden justify-end">
             <button
               className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
               onClick={() => setMobileMenuOpen((open) => !open)}

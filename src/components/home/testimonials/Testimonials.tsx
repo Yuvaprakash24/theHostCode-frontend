@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Testimonials: React.FC = () => {
+const Testimonials = () => {
   const testimonials = [
     {
       name: "Sai Srinivas",
@@ -43,7 +43,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`first-${index}`}
-                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[280px] max-w-[280px] h-[280px] md:min-w-[500px] md:max-w-[500px] md:h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`second-${index}`}
-                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[280px] max-w-[280px] h-[280px] md:min-w-[500px] md:max-w-[500px] md:h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -88,7 +88,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`first-reverse-${index}`}
-                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[280px] max-w-[280px] h-[280px] md:min-w-[500px] md:max-w-[500px] md:h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -109,7 +109,7 @@ const Testimonials: React.FC = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`second-reverse-${index}`}
-                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[500px] max-w-[500px] h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
+                className="bg-white rounded-2xl p-6 flex flex-col gap-4 min-w-[280px] max-w-[280px] h-[280px] md:min-w-[500px] md:max-w-[500px] md:h-[200px] my-6" style={{ boxShadow: '-20px 20px 22px 0px #0000004D' }}
               >
                 <div className="flex items-center gap-4">
                   <img
@@ -134,4 +134,4 @@ const Testimonials: React.FC = () => {
   );
 };
 
-export default Testimonials; 
+export default Testimonials;
