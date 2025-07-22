@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Card from '../common/Card';
 
 
 interface BlogPost {
