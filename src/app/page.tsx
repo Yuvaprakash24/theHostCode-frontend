@@ -4,7 +4,8 @@ import {
   MainSection,
   WhyChooseUs,
   AboutUs,
-  Testimonials
+  Testimonials,
+  
 } from '@/components';
 
 export default function Home() {

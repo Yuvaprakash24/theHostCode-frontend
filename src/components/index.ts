@@ -7,6 +7,9 @@ export { default as MainSection } from './home/main';
 export { default as WhyChooseUs } from './home/why-choose-us';
 export { default as AboutUs } from './home/about-us';
 export { default as Testimonials } from './home/testimonials';
+  
+// Blog Components
 
+export { default as LatestPosts } from './blogs/LatestPosts';
 // Common Components
 export { Button, Card } from './common'; 
