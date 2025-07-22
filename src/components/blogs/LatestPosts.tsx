@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-
+import BlogCard from '../common/BlogCard';
 
 interface BlogPost {
   id: number;
@@ -118,7 +118,7 @@ const LatestPosts: React.FC<LatestPostsProps> = ({
   const displayPosts = showAll ? filteredPosts : filteredPosts.slice(0, limit);
 
   return (
-    <section className={`${showAll ? 'min-h-screen bg-gray-50' : 'py-16 bg-white'}`}>
+    <section className={showAll ? 'min-h-screen bg-gray-50' : 'py-16 bg-white'}>
       {/* Hero Section - only show on full blog page */}
       {showAll && (
         <div className="max-w-5xl mx-auto px-4 py-16">
@@ -181,38 +181,16 @@ const LatestPosts: React.FC<LatestPostsProps> = ({
           </div>
         </div>
       )}
-
-      {/* Blog Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className={`grid grid-cols-1 md:grid-cols-2 ${showAll ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-6`}>
+      {/* Blog Grid using BlogCard */}
+      <div className="max-w-9xl mx-auto px-6 sm:px-6 lg:px-8 pb-16">
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${showAll ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-10`}>
           {displayPosts.map((post) => (
-            <Link key={post.id} href={`/blogs/${post.slug}`}>
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-300 relative overflow-hidden">
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-800">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 hover:text-blue-600 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-3">
-                    {showAll ? post.description : post.excerpt}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-black font-medium hover:underline">
-                      Read more
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {new Date(post.publishedAt).toLocaleDateString()}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
+            <BlogCard
+              key={post.id}
+              post={post}
+              showDescription={showAll}
+              variant="elevated"
+            />
           ))}
         </div>
 
