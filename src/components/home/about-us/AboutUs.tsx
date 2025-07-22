@@ -39,9 +39,9 @@ const AboutUs: React.FC = () => {
 
           <div
             ref={rightRef}
-            className={`text-left px-10 ${rightInView ? 'animate-slide-in-right' : 'opacity-0'}`}
+            className={`text-center sm:text-left sm:px-10 ${rightInView ? 'animate-slide-in-right' : 'opacity-0'}`}
           >
-            <p className="text-gray-800 mb-8 leading-relaxed my-font pr-24">
+            <p className="text-gray-800 mb-8 leading-relaxed my-font sm:pr-24 sm:p-0 p-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi delectus quasi molestiae optio quo explicabo non ullam, enim distinctio qui ipsa illum magni provident. Minus, doloremque earum deleniti voluptates dolorum eum nam at eius tenetur fugiat velit voluptatum alias possimus quis ullam Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, harum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, laudantium.
             </p>
             <Button>
