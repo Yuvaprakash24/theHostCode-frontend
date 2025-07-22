@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "theHostCode",
-  description: "theHostCode",
+  title: "synqubits",
+  description: "synqubits",
 };
 
 export default function RootLayout({

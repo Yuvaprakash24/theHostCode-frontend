@@ -46,7 +46,7 @@ const menuItems = [
     label: 'Blogs', 
     dropdown: true,
     dropdownContent: [
-      { label: 'Latest Posts', href: '#' },
+      { label: 'Latest Posts', href: '/blog/LatestPosts' },
       { label: 'Tech Insights', href: '#' },
       { label: 'Case Studies', href: '#' },
       { label: 'Industry News', href: '#' },

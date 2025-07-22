@@ -106,6 +106,35 @@ body {
   animation-delay: 0.5s;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-slide-infromleft {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-infromright {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}
+
 .home-page-heading {
   font-family: 'Work Sans', Arial, Helvetica, sans-serif;
   font-weight: 900;
