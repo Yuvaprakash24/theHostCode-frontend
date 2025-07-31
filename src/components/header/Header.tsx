@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '../common';
-
+import Link from 'next/link';
 const menuItems = [
   {
     label: 'About us',
@@ -240,6 +240,7 @@ const Header = () => {
           
           {/* Contact Us Button */}
           <div className="hidden lg:flex flex-1 justify-end">
+            <Link href="/contact"></Link>
             <Button className="text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base my-font">
               contact us
             </Button>

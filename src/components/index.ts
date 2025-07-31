@@ -11,5 +11,8 @@ export { default as Testimonials } from './home/testimonials';
 // Blog Components
 
 export { default as LatestPosts } from './blogs/LatestPosts';
+
+//Contact Components
+export { default as ContactPage} from './contacts/ContactPage';
 // Common Components
 export { Button, Card } from './common'; 
