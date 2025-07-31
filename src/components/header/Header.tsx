@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '../common';
-
+import Link from 'next/link';
 const menuItems = [
   {
     label: 'About us',
@@ -240,9 +240,11 @@ const Header = () => {
           
           {/* Contact Us Button */}
           <div className="hidden lg:flex flex-1 justify-end">
-            <Button className="text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base my-font">
-              contact us
-            </Button>
+            <Link href="/contact">
+              <Button className="text-white rounded-2xl px-2 py-1 sm:px-4 sm:py-2 font-semibold shadow-none border-none text-xs sm:text-base my-font">
+                contact us
+              </Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -403,15 +405,17 @@ const Header = () => {
           
           {/* Contact Us Button in Mobile Menu */}
           <div className="mt-4 pt-4 border-t border-gray-200 flex justify-center">
-            <Button 
-              className={`w-full bg-main-color text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base transition-all duration-500 transform ${
-                mobileMenuOpen 
-                  ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-4 scale-95'
-              }`}
-            >
-              contact us
-            </Button>
+            <Link href="/contact">
+                <Button 
+                  className={`w-full bg-main-color text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base transition-all duration-500 transform ${
+                    mobileMenuOpen 
+                      ? 'opacity-100 translate-y-0 scale-100' 
+                      : 'opacity-0 translate-y-4 scale-95'
+                  }`}
+                >
+                  contact us
+                </Button>
+            </Link>
           </div>
         </div>
       </div>
