@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
+import { Button } from '../common';
 interface FormData {
   name: string;
   email: string;
@@ -72,7 +72,7 @@ export default function ContactPage() {
               {/* Left Column - Form */}
               <div>
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                  Let's Talk
+                  Let&apos;s Talk
                 </h1>
                 <p className="text-gray-600 mb-8">
                   lets request a quote or want to meet up for coffee.
@@ -143,7 +143,7 @@ export default function ContactPage() {
                       Phone number
                     </label>
                     <div className="flex">
-                      <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                      <span className="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 text-sm">
                         91+
                       </span>
                       <input
@@ -174,7 +174,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Privacy Policy Checkbox */}
-                  <div className="flex items-start">
+                  <div className="flex items-center">
                     <input
                       type="checkbox"
                       id="agreeToPrivacy"
@@ -182,7 +182,7 @@ export default function ContactPage() {
                       checked={formData.agreeToPrivacy}
                       onChange={handleInputChange}
                       required
-                      className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="h-4 w-4 accent-black focus:ring-black border-gray-300 rounded"
                     />
                     <label htmlFor="agreeToPrivacy" className="ml-2 text-sm text-gray-600">
                       I hereby agree to our Privacy Policy terms.
@@ -190,13 +190,17 @@ export default function ContactPage() {
                   </div>
 
                   {/* Submit Button */}
-                  <button
+                  {/* <button
                     type="submit"
                     disabled={isSubmitting || !formData.agreeToPrivacy}
                     className="w-full sm:w-auto px-8 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
+                  </button> */}
+                  <Button
+                    disabled={isSubmitting || !formData.agreeToPrivacy}>
+                    {isSubmitting ? 'Sending...': 'Send Message'}
+                  </Button>
                 </form>
               </div>
                {/* Right Column - Map */}
@@ -255,7 +259,7 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div>
-                      <p className="text-gray-900 font-medium">info@onified.com</p>
+                      <p className="text-gray-900 font-medium">info@syncqubits.com</p>
                     </div>
                   </div>
 
