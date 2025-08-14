@@ -11,6 +11,8 @@ export { default as Testimonials } from './home/testimonials';
 // Blog Components
 
 export { default as LatestPosts } from './blogs/LatestPosts';
+//service components
+export {default as ServiceCard} from './services/ServicePage';
 
 //Contact Components
 export { default as ContactPage} from './contacts/ContactPage';

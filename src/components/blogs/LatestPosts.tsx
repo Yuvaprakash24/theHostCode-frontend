@@ -121,8 +121,8 @@ const LatestPosts: React.FC<LatestPostsProps> = ({
     <section className={showAll ? 'min-h-screen bg-gray-50' : 'py-16 bg-white'}>
       {/* Hero Section - only show on full blog page */}
       {showAll && (
-        <div className="max-w-5xl mx-auto px-4 py-16">
-  <div className="bg-[#D8D4CD] rounded-[32px] min-h-[500px] overflow-hidden flex flex-col md:flex-row shadow-lg">
+        <div className="max-w-5xl mx-auto px-4 py-16 ">
+  <div className="bg-[#D8D4CD] rounded-[32px] min-h-[500px] overflow-hidden flex flex-col md:flex-row shadow-lg ">
     {/* Left Image */}
     <div className="md:w-1/2 animate-slide-infromright">
       <img
