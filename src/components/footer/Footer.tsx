@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
               <ul className="space-y-0.5 md:space-y-1">
                 <li><a href="#" className="hover:underline">About us</a></li>
                 <li><a href="#" className="hover:underline">Career</a></li>
-                <li><a href="#" className="hover:underline">Contact</a></li>
+                <li><a href="/contact" className="hover:underline">Contact</a></li>
                 <li><a href="#" className="hover:underline">Services</a></li>
               </ul>
             </div>
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
               <h4 className="font-bold mb-1 md:mb-2 text-white">Resources</h4>
               <ul className="space-y-0.5 md:space-y-1">
                 <li><a href="#" className="hover:underline">Security & Compliance</a></li>
-                <li><a href="#" className="hover:underline">Blogs</a></li>
+                <li><a href="/blog" className="hover:underline">Blogs</a></li>
                 <li><a href="#" className="hover:underline">Case study</a></li>
                 <li><a href="#" className="hover:underline">FAQs</a></li>
               </ul>

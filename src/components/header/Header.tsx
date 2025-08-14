@@ -549,15 +549,17 @@ const Header: React.FC = () => {
           
           {/* Contact Us Button in Mobile Menu */}
           <div className="mt-4 pt-4 border-t border-gray-200 flex justify-center">
-            <Button 
-              className={`w-full bg-main-color text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base transition-all duration-500 transform ${
-                mobileMenuOpen 
-                  ? 'opacity-100 translate-y-0 scale-100' 
-                  : 'opacity-0 translate-y-4 scale-95'
-              }`}
-            >
-              contact us
-            </Button>
+            <Link href="/contact">
+                <Button 
+                  className={`w-full bg-main-color text-white rounded-2xl px-6 py-3 font-semibold shadow-none border-none text-base transition-all duration-500 transform ${
+                    mobileMenuOpen 
+                      ? 'opacity-100 translate-y-0 scale-100' 
+                      : 'opacity-0 translate-y-4 scale-95'
+                  }`}
+                >
+                  contact us
+                </Button>
+            </Link>
           </div>
         </div>
       </div>
