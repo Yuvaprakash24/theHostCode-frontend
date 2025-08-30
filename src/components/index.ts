@@ -14,6 +14,9 @@ export { default as LatestPosts } from './blogs/LatestPosts';
 //service components
 export {default as ServiceCard} from './services/ServicePage';
 
+//Carrer component
+export {default as CareerPage} from './career/CareerPage';
+
 //Contact Components
 export { default as ContactPage} from './contacts/ContactPage';
 // Common Components

@@ -8,31 +8,37 @@ const servicesData = [
   {
     id: 'ai',
     title: 'Artificial Intelligence',
+    image: '/services/s1[1].png',
     href: '/services/artificial-intelligence'
   },
   {
     id: 'data-science',
     title: 'Data Science',
+    image: '/services/s2[1].png',
     href: '/services/data-science'
   },
   {
     id: 'cloud',
     title: 'Cloud Computing',
+    image: '/services/s3[1].png',
     href: '/services/cloud-computing'
   },
   {
     id: 'web-dev',
     title: 'Web Development',
+    image: '/services/s4[1].png',
     href: '/services/web-development'
   },
   {
     id: 'ui-ux',
     title: 'UI/UX Designing',
+    image: '/services/s5[1].png',
     href: '/services/ui-ux-design'
   },
   {
     id: 'digital-marketing',
     title: 'Digital Marketing',
+    image: '/services/s6[1].png',
     href: '/services/digital-marketing'
   }
 ];
@@ -45,7 +51,7 @@ const ServicesPage: React.FC = () => {
       {/* Main Content */}
       <main className="py-16 px-4 max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-left mx-15 mb-16">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">Our Services.</h2>
           
         </div>
@@ -56,6 +62,7 @@ const ServicesPage: React.FC = () => {
             <ServiceCard
               key={service.id}
               title={service.title}
+              image={service.image}
               href={service.href}
             />
           ))}
