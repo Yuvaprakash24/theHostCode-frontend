@@ -1,7 +1,5 @@
 import React from 'react';
 import ServiceCard from '../common/ServiceCard';
-import Header from '../header';
-import Footer from '../footer';
 
 // Services data
 const servicesData = [

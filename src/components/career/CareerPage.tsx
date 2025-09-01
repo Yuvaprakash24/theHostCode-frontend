@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../common/Button';
-import { Coffee, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import OpenPositions from '../common/openposition';
 const CareerPage = () => {
   return (
@@ -139,8 +139,8 @@ const CareerPage = () => {
       <div className="space-y-8">
         <div>
           <p className="text-lg my-font text-gray-700 leading-relaxed mb-8">
-            At SynQubits, we're more than just a quantum computing company, we're a 
-            passionate team on a mission to redefine what's possible with technology. By 
+            At SynQubits, we&apos;re more than just a quantum computing company, we&apos;re a 
+            passionate team on a mission to redefine what&apos;s possible with technology. By 
             joining us, you become part of a fast, growing, innovation-driven environment 
             where your ideas matter, your growth is prioritized, and your work creates real-world impact.
           </p>
