@@ -8,6 +8,8 @@ export { default as WhyChooseUs } from './home/why-choose-us';
 export { default as AboutUs } from './home/about-us';
 export { default as Testimonials } from './home/testimonials';
   
+//About Components
+export {default as About} from './About/Aboutus';
 // Blog Components
 
 export { default as LatestPosts } from './blogs/LatestPosts';
