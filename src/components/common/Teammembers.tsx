@@ -38,7 +38,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
 
       {/* Right side - Content */}
       <div className="flex">
-        <p className="text-gray-700 leading-relaxed text-sm ">"{testimonial}"</p>
+        <p className="text-gray-700 leading-relaxed text-sm ">&quot;{testimonial}&quot;</p>
       </div>
     </div>
   );
